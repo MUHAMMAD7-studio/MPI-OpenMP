@@ -1,0 +1,12 @@
+For serialFilters code file compilation type command "gcc serialFilters.c -o output lib/bmp.c lib/libbmp/libbmp.c".
+for execution and taking output type "./output".
+
+============================================================================================================
+
+For parallel code compilation type command "mpicc mainparallel.c -o test lib/bmp.c lib/libbmp/libbmp.c -lm -fopenmp".
+For execution typing "mpiexec -hostfile hostfile -n 8 ./test" where number of process are to be specified in my example is 8.
+to generate hostfile type "sh generate_hosts.sh number_of_hosts"
+To open image file on cluster would require to type "-X" in ssh like "ssh -X name123@uvcluster.cs.uit.no"
+And to view the image use command "xdg-open image_name.bmp"
+
+the number of threads are set to 4 can be changed from code of mainparallel.c
